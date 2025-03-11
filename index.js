@@ -9,7 +9,12 @@ app.use(express.json())
 const Hotel = require("./models/hotel.models")
 
 const cors = require("cors")
-app.use(cors());
+
+const corsOptions = {
+  origin: "*",
+  credentials: true
+}
+app.use(cors(corsOptions));
 
 initializeDatabase();
 
